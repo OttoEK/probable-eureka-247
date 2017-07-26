@@ -2,15 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {RedditComponent} from './reddit/reddit.component';
+import {RedditService} from './reddit/reddit.service';
+import { HttpModule } from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, RedditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpModule,FormsModule
   ],
-  providers: [],
+  providers: [RedditService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

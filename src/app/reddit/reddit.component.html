@@ -1,0 +1,10 @@
+<input type="text" [(ngModel)]="subreddit" required><button (click)="getSubrPosts(subreddit)">BOTON</button>
+<div id="columns" *ngIf="resultado">
+  <figure *ngFor="let c of resultado.data.children">
+    <img *ngIf="c.data.preview" src="{{c.data.preview.images[0].source.url}}">
+    <video>
+      <source src="{{c.data.url}}" type="video/WebM">
+    </video>
+    <figcaption>{{c.data.title}}</figcaption>
+  </figure>
+</div>
